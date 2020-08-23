@@ -7,27 +7,34 @@ const SignUp = props => {
     console.log('props',props)
     const [formState, setFormState] = useState({
         username: "",
-        password: ""
+        password: "",
+        phonenumber: ""
     });
+
+    // const [user, setUser] = useState({
+    //     username: "",
+    //     phonenumber: ""
+    // });
 
     const handleChanges = e => {
         setFormState({ ...formState, [e.target.name]: e.target.value});
+        console.log("e.target.value", e.target.value)
     };
-
 
     const loginSubmit = e => {
         e.preventDefault()
         axiosWithAuth()
-        .post("/signup", formState)
+        .post("/auth/register", formState)
         .then((res) => {
             console.log("res: signup success", res);
             props.history.push("/dashboard");
+            // setUser({username, phonenumber} = formState);
         })
-        // .catch((err) => {
-        //     console.log("err: login failed", err)
-        //     localStorage.removeItem("authToken");
+        .catch((err) => {
+            console.log("err: signup failed", err)
+            localStorage.removeItem("authToken");
             
-        // });
+        });
     };
 
 
@@ -36,7 +43,7 @@ const SignUp = props => {
         return (
             <div>
                 <h1>Sign Up</h1>
-                <form onSubmit={loginSubmit}> 
+                <form className="form" onSubmit={loginSubmit}> 
                     <label htmlFor="name">
                         Username
                         <input name="username" type="text" placeholder="Enter Username" onChange={handleChanges} value={formState.username}/>
@@ -44,6 +51,10 @@ const SignUp = props => {
                     <label htmlFor="password">
                         Password
                         <input name="password" type="password" placeholder="Enter Password" onChange={handleChanges} value={formState.password}/>
+                    </label>
+                    <label htmlFor="phonenumber">
+                        Phone Number
+                        <input name="phonenumber" type="text" placeholder="Enter Password" onChange={handleChanges} value={formState.phonenumber}/>
                     </label>
                     <button type="submit">Sign Up Now!</button>
                 </form>

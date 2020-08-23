@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils.js/axiosWithAuth";
 
+
 const Login = props => {
     console.log('props',props)
     const [formState, setFormState] = useState({
@@ -17,7 +18,7 @@ const Login = props => {
     const loginSubmit = e => {
         e.preventDefault()
         axiosWithAuth()
-        .post("/login", formState)
+        .post("/auth/login", formState)
         .then((res) => {
             console.log("res: login success", res);
             localStorage.setItem("authToken", res.data.payload);
@@ -36,7 +37,7 @@ const Login = props => {
         return (
             <div>
                 <h1>Login</h1>
-                <form onSubmit={loginSubmit}> 
+                <form className="form" onSubmit={loginSubmit}> 
                     <label htmlFor="name">
                         Username
                         <input name="username" type="text" placeholder="Enter Username" onChange={handleChanges} value={formState.username}/>
@@ -47,7 +48,7 @@ const Login = props => {
                     </label>
                     <button>Submit</button>
                 </form>
-                <Link to='/signup'>Not a User? Click Here!</Link>
+                <Link className="signup-link" to='/signup'>Not a User? Click Here!</Link>
             </div>
 
         )
