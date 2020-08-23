@@ -1,6 +1,6 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 .App-logo {
   height: 40vmin;
@@ -24,15 +24,191 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  
+  align-content: center;
+  width: 100px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100px;
+  margin: auto;
+}
+
+.signup-link {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  align-content: center;
+  width: 100px;
+}
+.add-form {
+  margin-top: 60px;
+}
+
+.fa-users {
+  font-size: 2.5rem;
+  color: #82E0AA;
+}
+
+.btn {
+  background-color: #82E0AA;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  border-bottom: solid 5px #1E8449;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  transform: translateY(2px);
+  border-bottom: solid 3px #1E8449;
+}
+
+.btn:active {
+  border-bottom: none;
+  transform: translateY(4px);
+}
+
+.f-cont {
+  margin: 3% 5%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.edit-form {
+  position: absolute;
+  z-index: 1;
+  top: 210px;
+}
+
+.edit {
+  background-color: rgb(255, 255, 255);
+  border: #4d4c4c91 2px solid;
+  padding: 20px 150px;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.14);
+}
+
+.plant-h1 {
+  font-weight: lighter;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.plant-card {
+  display: flex;
+  border: 2px #4d4c4c91 solid;
+  border-left: 7px #70be92 solid;
+  margin-bottom: 30px;
+  width: 430px;
+  border-radius: 4px;
+  padding-bottom: 5px;
+}
+
+.plant-card:hover {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.14);
+}
+
+.fnd {
+  font-size: 3.5rem;
+  position: relative;
+  top: 50px;
+  left: 30px;
+}
+
+.usr {
+  font-size: 7rem;
+  position: relative;
+  left: 20px;
+  min-width: 250px;
+}
+
+.content {
+  padding-left: 80px;
+  padding-right: 20px;
+}
+
+.fa-ellipsis-h {
+  position: relative;
+  top: 10px;
+  left: 255px;
+  cursor: pointer;
+}
+
+.span {
+  font-weight: bold;
+}
+
+.add-plant {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.ghost-user {
+  width: 250px;
+  margin-right: 5%;
+
+  padding-top: 20px;
+  border-radius: 4px;
+  height: 300px;
+}
+
+.ghost-friend {
+  width: 439px;
+  height: 170px;
+  margin-bottom: 30px;
+  margin-left: -5%;
+  border-radius: 4px;
+}
+
+.fa-circle {
+  color: #82e0ab
+}
+
+.r {
+  margin-left: 40px;
+}
+
+.gradient {
+  position: relative;
+  background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 50%, 0.596),
+    hsla(0, 0%, 71%, 0.664)
+  );
+  z-index: 1;
+}
+
+.gradient::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    hsla(0, 0%, 52%, 0.651),
+    hsla(0, 0%, 50%, 0.541)
+  );
+  z-index: -1;
+  transition: opacity 0.3s linear;
+  opacity: 0;
+}
+
+.gradient:hover::before {
+  opacity: 1;
 }
