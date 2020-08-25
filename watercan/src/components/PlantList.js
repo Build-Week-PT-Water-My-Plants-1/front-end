@@ -3,7 +3,7 @@ import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
 // import EditForm from './EditForm';
-import axios from "axios";
+// import axios from "axios";
 
 const PlantList = () => {
     const [plants, setPlants] = useState([]);
@@ -11,7 +11,7 @@ const PlantList = () => {
    
     const [add, setAdd] = useState(false);
     const [edit, setEdit] = useState(false);
-    const [id, setId] = useState(123);
+    const [id, setId] = useState(1);
 
     const toggleAdd = () => {
         setAdd(!add);
@@ -25,7 +25,7 @@ const PlantList = () => {
         setIsLoading(true);
         setTimeout(()=>{
         axiosWithAuth()
-        .get(`/plants/${id}`)
+        .get(`/plants`)
         .then(res => {
             console.log('axios.get plants success! res:', res);
             setPlants(res.data);
@@ -56,16 +56,16 @@ const PlantList = () => {
         {
             plants.map(plant => {
                 return(
-                    <div className='plant-card' key={plant.id}>
+                    <div className='plant-card' key={plant.user_id}>
                         <div>
                             <i class="far fa-user-circle fnd"></i>
                         </div>
                         <span className='content'>
                             <i class="fas fa-ellipsis-h" 
-                            onClick={() => {setEdit(true); setId(plant.id);}}></i>
-                            <h1 className='plant-h1'>{plant.name}</h1>
-                            <p> Age: {plant.age}</p>
+                            onClick={() => {setEdit(true); setId(plant.user_id);}}></i>
+                            <h1 className='plant-h1'>{plant.nickname}</h1>
                             <p> Species: {plant.species}</p>
+                            <p> Frequency: {plant.h2ofrequency}</p>
                         </span>
                     </div>
                 );
@@ -83,8 +83,6 @@ const PlantList = () => {
 };
 
 export default PlantList;
-
-
 
 
 
