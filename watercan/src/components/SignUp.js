@@ -28,6 +28,7 @@ const SignUp = props => {
         .then((res) => {
             console.log("res: signup success", res);
             props.history.push("/dashboard");
+            localStorage.setItem("authToken", res.data.jwt);
             // setUser({username, phonenumber} = formState);
         })
         .catch((err) => {

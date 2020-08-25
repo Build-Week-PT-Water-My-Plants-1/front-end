@@ -21,7 +21,7 @@ const Login = props => {
         .post("/auth/login", formState)
         .then((res) => {
             console.log("res: login success", res);
-            localStorage.setItem("authToken", res.data.payload);
+            localStorage.setItem("authToken", res.data.jwt);
             props.history.push("/protected");
         })
         .catch((err) => {

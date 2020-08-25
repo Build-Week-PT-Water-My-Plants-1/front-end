@@ -6,10 +6,11 @@ export const axiosWithAuth = () => {
 
 
     return axios.create({
-        baseURL: "https://cors-anywhere.herokuapp.com/https://watercan-io-bw.herokuapp.com/api",
+        baseURL: "https://watercan-io-bw.herokuapp.com/api",
         headers: {
-            Authorization: token
+            Authorization: `Bearer ${token}`
         }
     });
 };
 
+// Authorization: `Bearer ${token}`
