@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <div>
+    <>
       {/* <PlantContext.Provider value={{plants, setPlants}}> */}
       <Nav />
         <Switch>
@@ -26,7 +26,7 @@ function App() {
           <PrivateRoute exact path="/protected" component={PlantList} />
         </Switch>
         {/* </PlantContext.Provider> */}
-    </div>
+    </>
   );
 }
 
