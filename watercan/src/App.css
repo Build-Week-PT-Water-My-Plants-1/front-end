@@ -60,7 +60,7 @@ form {
   color: #82E0AA;
 }
 
-.btn {
+/* .btn {
   background-color: #82E0AA;
   color: white;
   font-weight: bold;
@@ -77,12 +77,12 @@ form {
 .btn:hover {
   transform: translateY(2px);
   border-bottom: solid 3px #1E8449;
-}
-
+} */
+/* 
 .btn:active {
   border-bottom: none;
   transform: translateY(4px);
-}
+} */
 
 .f-cont {
   margin: 3% 5%;
@@ -111,7 +111,7 @@ form {
 .plant-card {
   display: flex;
   border: 2px #4d4c4c91 solid;
-  border-left: 7px #70be92 solid;
+  border-left: 7px #3E8914 solid;
   margin-bottom: 30px;
   width: 430px;
   border-radius: 4px;
@@ -175,7 +175,7 @@ form {
 }
 
 .fa-circle {
-  color: #82e0ab
+  color: #3f8914b7
 }
 
 .r {
@@ -228,7 +228,8 @@ header{
 
 div .login{
   align-self: center;
-  background: #C4C4C4;
+  background: #c4c4c4c7;
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.14);
   width: 50%;
   height: auto;
   border-radius: 10px;
@@ -237,10 +238,11 @@ div .login{
   justify-content: center;
   align-items: center;
   padding-bottom: 50px;
-  margin: 5%;
+  margin-top: 5%;
   
 }
 nav a{
   text-decoration: none;
   color: black
 }
+

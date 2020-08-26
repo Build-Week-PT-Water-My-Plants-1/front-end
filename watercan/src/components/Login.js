@@ -10,6 +10,8 @@ const Login = props => {
         password: ""
     });
 
+    const [userId, setUserId] = useState(123);
+
     const handleChanges = e => {
         setFormState({ ...formState, [e.target.name]: e.target.value});
     };
@@ -22,6 +24,7 @@ const Login = props => {
         .then((res) => {
             console.log("res: login success", res);
             localStorage.setItem("authToken", res.data.jwt);
+            setUserId(res.data.user.id);
             props.history.push("/protected");
         })
         .catch((err) => {

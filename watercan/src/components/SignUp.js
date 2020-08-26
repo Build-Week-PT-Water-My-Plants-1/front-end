@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils.js/axiosWithAuth";
+// import flowers from '../images';
+// import './App.css';
 
 
 const SignUp = props => {
@@ -42,7 +44,7 @@ const SignUp = props => {
 
   
         return (
-            <div className="login">
+                <div className="login">
                 <h1>Sign Up</h1>
                 <form className="form" onSubmit={loginSubmit}> 
                     <label htmlFor="name">
@@ -59,7 +61,10 @@ const SignUp = props => {
                     </label>
                     <button type="submit">Sign Up Now!</button>
                 </form>
+                
             </div>
+            
+            
 
         )
 
