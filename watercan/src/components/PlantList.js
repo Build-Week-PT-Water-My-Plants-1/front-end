@@ -3,8 +3,8 @@ import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
 
-// import EditForm from './EditForm';
-// import axios from "axios";
+import EditForm from '../components/PlantUpdate';
+import axios from "axios";
 
 const PlantList = (props) => {
     const [plants, setPlants] = useState([]);
@@ -56,11 +56,11 @@ const PlantList = (props) => {
         </div>
         <div className='card-cont'>
         {
-            plants.map(plant => {
+            plants ? plants.map(plant => {
                 return(
                     <div className='plant-card' key={plant.id}>
                         <div>
-                            <i className="far fa-user-circle fnd"></i>
+                        <i className="fas fa-seedling fnd"></i>
                         </div>
                         <span className='content'>
                             <i className="fas fa-ellipsis-h" 
@@ -70,14 +70,14 @@ const PlantList = (props) => {
                             <p> Frequency: {plant.h2ofrequency}</p>
                         </span>
                     </div>
-                );
-            })
+                )
+            }) : null
         }
          </div>
 
-         {/* <div className='edit-form'>
-            {edit ? <EditForm setEdit={setEdit} plants={plants} setPlants={setPlants} propsid={id}/> : null}
-         </div> */}
+         <div className='edit-form'>
+            {edit ? <EditForm setEdit={setEdit} getData={getData} plants={plants} setPlants={setPlants} propsid={id} /> : null}
+         </div>
          
     </div> }
     </>

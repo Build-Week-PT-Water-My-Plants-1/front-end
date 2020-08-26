@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import PlantList from  "./components/PlantList";
 import PrivateRoute from "./utils.js/PrivateRoute";
 import { PlantContext } from "./contexts/PlantContext"; 
+import flowers from "../src/images/Flowers.jpg"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <PrivateRoute exact path="/protected" component={PlantList} />
         </Switch>
         {/* </PlantContext.Provider> */}
+        <img src={flowers} alt='flowers' height='350px'/>
     </>
   );
 }
