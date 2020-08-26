@@ -1,13 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, createContext} from 'react';
 import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
+
 // import EditForm from './EditForm';
 // import axios from "axios";
 
-const PlantList = () => {
+const PlantList = (props) => {
     const [plants, setPlants] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+   
    
     const [add, setAdd] = useState(false);
     const [edit, setEdit] = useState(false);
@@ -43,12 +45,12 @@ const PlantList = () => {
     {isLoading ? <GhostLoad/> :
     <div className='f-cont'>
         <div className='user-card'>
-            <i class="fas fa-user-circle usr"></i>
+            <i className="fas fa-user-circle usr"></i>
             <p><span className='span'>User:</span> Plant God</p>
             <p><span className='span'>Total Plants:</span>{'  '}{plants.length}</p>
             <p className='add-plant' onClick={() => toggleAdd()}> Add a Plant {' '} 
                 {add ? <i class="fas fa-chevron-up"></i> :
-                <i class="fas fa-chevron-down"></i>}
+                <i className="fas fa-chevron-down"></i>}
                 </p>
                 {add ? <PlantForm getData = {getData}/> : null}
         </div>
@@ -56,13 +58,13 @@ const PlantList = () => {
         {
             plants.map(plant => {
                 return(
-                    <div className='plant-card' key={plant.user_id}>
+                    <div className='plant-card' key={plant.id}>
                         <div>
-                            <i class="far fa-user-circle fnd"></i>
+                            <i className="far fa-user-circle fnd"></i>
                         </div>
                         <span className='content'>
-                            <i class="fas fa-ellipsis-h" 
-                            onClick={() => {setEdit(true); setId(plant.user_id);}}></i>
+                            <i className="fas fa-ellipsis-h" 
+                            onClick={() => {setEdit(true); setId(plant.id);}}></i>
                             <h1 className='plant-h1'>{plant.nickname}</h1>
                             <p> Species: {plant.species}</p>
                             <p> Frequency: {plant.h2ofrequency}</p>
