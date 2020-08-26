@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, NavLink } from 'react-router-dom'
-import styled from 'styled-components'
+import { Link, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 
 const Nav = () => {
@@ -10,16 +10,20 @@ const Nav = () => {
     }
     let user = localStorage.getItem('username')
 
-    const NavBarLinks = styled.div`
-         max-width: 100%;
+    const NavBarLinks = styled.nav`
+         width: 100%;
          display: flex;
-         justify-content: space-evenly
+         justify-content: space-evenly;
+         align-items: center;
+         text-decoration: none;
+         font-weight: bold;
+         text-color: black;
          
      `;
 
 
     return (
-        <div>
+        <header>
             <h1>WaterCan</h1>
             <NavBarLinks>
 
@@ -29,7 +33,7 @@ const Nav = () => {
                 {/* <NavLink to="plants">Plants</NavLink> */}
                 
             </NavBarLinks>
-        </div>
+        </header>
     )
 }
 
