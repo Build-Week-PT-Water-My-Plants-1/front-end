@@ -37,7 +37,7 @@ const PlantList = (props) => {
           console.error('axios.get plants error', err)
           setIsLoading(false)
         })
-        }, 2000) 
+        }, 500) 
     }
 
     return (
@@ -76,7 +76,7 @@ const PlantList = (props) => {
          </div>
 
          <div className='edit-form'>
-            {edit ? <EditForm setEdit={setEdit} getData={getData} plants={plants} setPlants={setPlants} propsid={id} /> : null}
+            {edit ? <EditForm setEdit={setEdit} getData={getData} plants={plants} setPlants={setPlants} propsid={id} setEdit={setEdit} /> : null}
          </div>
          
     </div> }

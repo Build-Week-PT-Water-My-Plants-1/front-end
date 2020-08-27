@@ -59,7 +59,7 @@ const SignUp = props => {
                         Phone Number
                         <input name="phonenumber" type="text" placeholder="Enter Password" onChange={handleChanges} value={formState.phonenumber}/>
                     </label>
-                    <button type="submit">Sign Up Now!</button>
+                    <button className='btn' type="submit">Sign Up Now!</button>
                 </form>
                 
             </div>

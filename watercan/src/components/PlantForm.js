@@ -97,7 +97,7 @@ const PlantForm = (props) => {
                             H2oFrequency
                             <input name="h2ofrequency" type="text" placeholder="Enter H2oFrequency" onChange={inputHandler} value={addPlants.h2ofrequency}/>
                         </label>
-                        <button type="submit">Add Plant</button>
+                        <button className='btn' type="submit">Add Plant</button>
             </form>
             
         </div>
