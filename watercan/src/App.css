@@ -60,8 +60,8 @@ form {
   color: #82E0AA;
 }
 
-/* .btn {
-  background-color: #82E0AA;
+.btn {
+  background-color: #3E8914;
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
@@ -69,7 +69,7 @@ form {
   border: none;
   outline: none;
   border-radius: 3px;
-  border-bottom: solid 5px #1E8449;
+  border-bottom: solid 5px #124b29;
   cursor: pointer;
   margin-top: 30px;
 }
@@ -77,12 +77,11 @@ form {
 .btn:hover {
   transform: translateY(2px);
   border-bottom: solid 3px #1E8449;
-} */
-/* 
+} 
 .btn:active {
   border-bottom: none;
   transform: translateY(4px);
-} */
+}
 
 .f-cont {
   margin: 3% 5%;
@@ -246,3 +245,9 @@ nav a{
   color: black
 }
 
+.fa-times {
+  position: relative;
+  bottom: 10px;
+  left: 222px;
+  cursor: pointer;
+}

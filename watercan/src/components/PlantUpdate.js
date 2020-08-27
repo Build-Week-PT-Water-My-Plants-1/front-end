@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 
+
 const EditForm = props => {
 
     const [plant, setPlant] = useState({
@@ -9,6 +10,9 @@ const EditForm = props => {
         species: "",
         h2ofrequency: "",
     });
+
+    
+    
 
     const editPlant = props.plants.filter(p => p.id === props.propsid)
     console.log('edit plant', editPlant);
@@ -58,9 +62,27 @@ const EditForm = props => {
     //     });
     // };
 
+    
+
+    
+
+    const handleDelete = (id) => {
+        axiosWithAuth()
+            .delete(`/plants/${editPlant[0].id}`)
+            .then((res) => {
+            console.log("Delete Success", res);
+            props.getData();
+            })
+            .catch(err => 
+            console.log("Delete Error", err));
+        }
+
+ 
+    
 
     return (
         <div  className='edit'>
+        <i class="fas fa-times" onClick={() => {props.setEdit(false)}}></i>
         <h1>edit:</h1>
         <form onSubmit={handleSubmit} className='input-cont edit-fr'>
             <label htmlFor='nickname'>Nickname</label>
@@ -90,6 +112,8 @@ const EditForm = props => {
             className='input'
             />
             <button className='btn'>update</button>
+            <button className='btn' onClick={() => handleDelete(plant.id)}>delete</button>
+           
         </form>
         </div>
     );

@@ -49,7 +49,7 @@ const Login = props => {
                         Password
                         <input name="password" type="password" placeholder="Enter Password" onChange={handleChanges} value={formState.password}/>
                     </label>
-                    <button>Submit</button>
+                    <button className='btn'>Submit</button>
                 </form>
                 <Link className="signup-link" to='/signup'>Not a User? Click Here!</Link>
             </div>

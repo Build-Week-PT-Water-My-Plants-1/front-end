@@ -1,10 +1,10 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
 
 import EditForm from '../components/PlantUpdate';
-import axios from "axios";
+
 
 const PlantList = (props) => {
     const [plants, setPlants] = useState([]);
@@ -37,7 +37,7 @@ const PlantList = (props) => {
           console.error('axios.get plants error', err)
           setIsLoading(false)
         })
-        }, 2000) 
+        }, 500) 
     }
 
     return (
@@ -76,7 +76,7 @@ const PlantList = (props) => {
          </div>
 
          <div className='edit-form'>
-            {edit ? <EditForm setEdit={setEdit} getData={getData} plants={plants} setPlants={setPlants} propsid={id} /> : null}
+            {edit ? <EditForm setEdit={setEdit} getData={getData} plants={plants} setPlants={setPlants} propsid={id} setEdit={setEdit} /> : null}
          </div>
          
     </div> }
