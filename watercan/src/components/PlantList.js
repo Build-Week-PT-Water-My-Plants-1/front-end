@@ -1,10 +1,10 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
 
 import EditForm from '../components/PlantUpdate';
-import axios from "axios";
+
 
 const PlantList = (props) => {
     const [plants, setPlants] = useState([]);
