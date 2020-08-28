@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { axiosWithAuth } from "../utils.js/axiosWithAuth";
+import { UserContext } from "../contexts/UserContext";
 
 
 const Login = props => {
@@ -10,7 +11,7 @@ const Login = props => {
         password: ""
     });
 
-    const [userId, setUserId] = useState(123);
+    const { userId, setUserId} = useContext(UserContext);
 
     const handleChanges = e => {
         setFormState({ ...formState, [e.target.name]: e.target.value});
@@ -23,8 +24,9 @@ const Login = props => {
         .post("/auth/login", formState)
         .then((res) => {
             console.log("res: login success", res);
-            localStorage.setItem("authToken", res.data.jwt);
             setUserId(res.data.user.id);
+            localStorage.setItem("authToken", res.data.jwt);
+            console.log('user id', userId);
             props.history.push("/protected");
         })
         .catch((err) => {

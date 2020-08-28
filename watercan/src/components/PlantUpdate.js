@@ -83,7 +83,7 @@ const EditForm = props => {
     return (
         <div  className='edit'>
         <i class="fas fa-times" onClick={() => {props.setEdit(false)}}></i>
-        <h1>edit:</h1>
+        <h1>Edit:</h1>
         <form onSubmit={handleSubmit} className='input-cont edit-fr'>
             <label htmlFor='nickname'>Nickname</label>
             <input
@@ -111,7 +111,7 @@ const EditForm = props => {
             onChange={handleChanges}
             className='input'
             />
-            <button className='btn'>update</button>
+            <button className='btn'>Update</button>
             <button className='btn' onClick={() => handleDelete(plant.id)}>delete</button>
            
         </form>
