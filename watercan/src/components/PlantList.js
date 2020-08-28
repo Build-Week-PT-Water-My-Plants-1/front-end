@@ -1,16 +1,18 @@
-import React, {useState, useEffect } from 'react';
+import React, {useState, useEffect, useContext } from 'react';
 import { axiosWithAuth } from '../utils.js/axiosWithAuth';
 import PlantForm from './PlantForm';
 import GhostLoad from './GhostLoad';
+import { PlantContext } from "../contexts/PlantContext";
+
 
 import EditForm from '../components/PlantUpdate';
 
 
 const PlantList = (props) => {
-    const [plants, setPlants] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-   
-   
+
+    const { plants, setPlants, isLoading, setIsLoading } = useContext(PlantContext);
+    // const { userId, setUserId} = useContext(UserContext);
+
     const [add, setAdd] = useState(false);
     const [edit, setEdit] = useState(false);
     const [id, setId] = useState(1);
@@ -46,7 +48,7 @@ const PlantList = (props) => {
     <div className='f-cont'>
         <div className='user-card'>
             <i className="fas fa-user-circle usr"></i>
-            <p><span className='span'>User:</span> Plant God</p>
+            <p><span className='span'>User:</span>Plant God</p>
             <p><span className='span'>Total Plants:</span>{'  '}{plants.length}</p>
             <p className='add-plant' onClick={() => toggleAdd()}> Add a Plant {' '} 
                 {add ? <i class="fas fa-chevron-up"></i> :
